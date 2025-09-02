@@ -1,0 +1,17 @@
+*{
+  margin: 0px; 
+}
+h1{
+    border: solid;
+    padding: 30px;
+    margin: 20px;
+    background-color: coral;
+}
+label{
+    border: solid;
+    padding: 50px;
+    margin: 20px;
+}
+{
+   /* display: inline-block;
+}

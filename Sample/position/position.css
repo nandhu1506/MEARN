@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    background-color: azure;
+}
+.heading{
+    position: absolute;
+    font-size: 10rem;
+    line-height: 120px;
+    
+    text-align: center;
+    margin: 50px;
+    /* padding: 50px; */
+}
+.heading span{
+    display: block;
+}
+.main{
+    display: flex;    
+    height: 100vh;
+    
+    justify-content:space-evenly;
+}
+.widgit{
+    margin: 10% 5% 0px 5%;
+    height: 70%;
+    overflow: hidden;
+    padding: 0x;
+}
+img{
+    object-fit: cover;
+    height: 70%;
+    object-position: center;
+}
+.content{
+    text-align: justify;
+    padding: 0px 10px;
+    font-size: 18px;
+
+}
+h2{
+    margin: 10px 0px;
+}
+#mountain{
+    margin-top: 18%;
+}
+.readmore{
+    color: black;
+    text-decoration: none;
+}
+.readmore:hover{
+    text-decoration: underline;
+    color: blue;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- cdn link -->
+    <script src="https://kit.fontawesome.com/2fa123334d.js" crossorigin="anonymous"></script>     
+<!-- Animation -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- aos cdn link -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- aos cdn script -->
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    </head>
+
+<body>
+    <section id="container">
+    <!-- navbar -->
+    <nav class="navbar">
+        <!-- logo -->
+         <img class="logo" src="./Asset/logo.png" alt="logo">
+         <!-- links -->
+          <ul>
+            <li class="listitem"><a class="links" href="#home">Home</a></li>
+            <li class="listitem"><a class="links" href="#about">About</a></li>
+            <li class="listitem"><a class="links" href="#skills">Skills</a></li>
+            <li class="listitem"><a class="links" href="#contact">Contact</a></li>
+          </ul>
+    </nav>
+    <!-- home -->
+     <section id="home">
+        <div class="homecontent">
+            <h1 id="username">I'm Ana <span id="lname">Steel</span> </h1>
+            <p id="userdetails">
+                This is my official portfolio website to decsribe all <br>
+                Details and work experience in Web Development. </p>
+                <a id="download" download href="./Asset/cv.pdf">Download CV</a>
+        </div>
+        <div class="homeimages">
+            <!-- shape -->
+             <img id="shape" class="group1" src="./Asset/shape.png" alt="shape">
+            <!-- girl -->
+             <img id="girl" class="group1" src="./Asset/girl.png" alt="girl">
+        </div>
+
+     </section>
+
+
+    <!-- about -->
+    <div id="about">
+        <div class="sectionhead">
+            <h1 class="mainhead">About Me</h1>
+            <span class="subhead">Introduction</span>
+        </div>
+        <div class="aboutcontent">
+            <div data-aos="fade-right"
+                 data-aos-offset="300"
+                 data-aos-easing="ease-in-sine"
+                 class="aboutcontent">
+                <img  width="150%" src="./Asset/about.jpg" alt="about">
+            </div>
+            <div class="aboutdetails">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat vitae reprehenderit, in labore iusto quas non, accusamus aperiam a dignissimos neque quaerat quisquam ad totam possimus enim. Dicta, ex perferendis.
+                    Beatae obcaecati accusantium, tempore vitae at, cum officiis, nemo nostrum voluptates eum dolore a vel quod quos earum perferendis expedita voluptatem quidem non in maxime. Odit, expedita. Error, saepe dolorem.
+                    Ducimus laborum voluptatibus facilis incidunt assumenda facere nostrum eligendi similique fugiat? Animi saepe laboriosam magni dolore corporis reiciendis nisi. Dolorem iure deleniti nostrum est in delectus dicta vitae incidunt obcaecati.
+                    Similique harum ex totam, repudiandae facere temporibus labore nobis porro quam accusamus, eius, nihil sed perspiciatis eligendi et sapiente iste fugiat sequi impedit at odit perferendis iusto. Ab, pariatur facilis.
+               </p>
+               <div class="informations">
+                    <div class="infobox">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="infospan">Ana Steel</span>
+                    </div>
+                    <div class="infobox">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="infospan">1234567890</span>
+                    </div>
+                    <div class="infobox">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="infospan">aasbdfhbhbn@gmail.com</span>
+                    </div>
+               </div>       
+            </div>
+        </div>
+    </div>
+
+    <!-- skills -->
+     <section id="skills">
+     <div class="sectionhead">
+            <h1 class="mainhead">Skills</h1>
+            <span class="subhead">My Skills</span>
+        </div>
+        <div class="skillcontents">
+            <div class="progressbar">
+                <div class="bars">
+                    <h3 class="barhead">HTML</h3>
+                    <span class="barpercent">89%</span>
+                    <div class="basebar"></div>
+                    <div class="htmlbar basebar"></div>
+                </div>
+                <div class="bars">
+                    <h3 class="barhead">CSS</h3>
+                    <span class="barpercent">79%</span>
+                    <div class="basebar"></div>
+                    <div class="cssbar basebar"></div>
+                </div>
+                <div class="bars">
+                    <h3 class="barhead">JAVA</h3>
+                    <span class="barpercent">85%</span>
+                    <div class="basebar"></div>
+                    <div class="javabar basebar"></div>
+                </div>
+
+            </div>
+            <div 
+                 data-aos="fade-right"
+                 data-aos-offset="300"
+                 data-aos-easing="ease-in-sine">
+                <img src="./Asset/skill.jpg" width="80%" alt="skill image">
+            </div>
+        </div>
+        </section>
+
+
+    <!-- contact -->
+     <section id="contact">
+     <div class="sectionhead">
+            <h1 class="mainhead">Contact</h1>
+            <span class="subhead">My Contacts</span>
+        </div>
+        <div class="iconcollection">
+            
+                <!-- Linkedin -->
+                 <div class="icon">
+                <a href="http://google.com" target="_blank">
+                    <i class="fa-brands fa-linkedin-in brands"></i>
+                </a></div>
+
+                <!-- github -->
+                <div class="icon"><a href="http://google.com" target="_blank">
+                    <i class="fa-brands fa-github  brands"></i>
+                </a></div>
+
+                <!-- twitter -->
+                <div class="icon"><a href="http://google.com" target="_blank">
+                    <i class="fa-brands fa-twitter brands"></i>
+                </a></div>
+            </div>
+        </div>
+        </section>
+    <!-- footer -->
+     <footer>
+        <p id="copyright">&copy;My Portfolio Website - August 2025, All Rights Reserved to &reg; Ana Steel</p>
+        <div class="icon upArrow"><a href="#container">
+                    <i class="fa-solid fa-angle-up  brands"></i>
+                </a></div>
+     </footer>
+     </section>
+</body>
+<!-- aos initialization script -->
+ <script>
+  AOS.init();
+</script>
+</html>

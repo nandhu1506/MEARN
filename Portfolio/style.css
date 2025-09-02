@@ -1,0 +1,218 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+#container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 100px;
+}
+.logo{
+    width: 180px;
+}
+.listitem{
+    list-style: none;
+    display: inline;
+    margin: 0px 20px;
+}
+.links{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+.links:hover{
+    text-decoration: underline;
+    color: blue;
+}
+.homecontent{
+    margin: 13% 0px 0px 8%;
+}
+#username{
+   font-size: 50px ;
+   margin-bottom: 20px;
+   font-family: serif;
+}
+#lname{
+    color: orange;
+}
+#userdetails{
+    font-size: 20px;
+    line-height: 1.2;
+}
+#download{
+    color: aliceblue;
+    border: solid;
+    background: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.homeimages{
+    width: 45%;
+    height: 75%;
+    position: absolute;
+    bottom: 0px;
+    right: 35px;
+}
+.group1{
+    position: absolute;
+    height: 100%;
+    bottom: 0px;
+    left: 30%;
+    transform: translateX(-30%);
+    transition: bottom 2s,left 1s;
+}
+.homeimages:hover #shape{
+    bottom: 15%;
+}
+.homeimages:hover #girl{
+    left: 20px;
+}
+#about{
+    margin: 15% 8% 0px 8%;
+}
+.sectionhead{
+    text-align: center;
+}
+.mainhead{
+    font-size: 30px;
+}
+.subhead{
+    font-size: 20px;
+    color: orange;
+}
+.aboutcontent{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 20px;
+    align-items: center;
+}
+.aboutdetails{
+    font-size: 18px;
+    text-align: justify;
+    font-weight: 600;
+}
+.informations{
+    margin-top: 1.3rem;
+}
+.infobox{
+    margin-bottom: 10px;
+}
+.infospan{
+    margin-left: 1rem;
+}
+.skills{
+   margin: 15% 8% 0px 8%;
+}
+.skillcontents{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 2rem;
+}
+.bars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0px;
+    position: relative;
+}
+.barhead,.barpercent{
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+.basebar{
+    background-color: black;
+    height: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0px;
+}
+.htmlbar{
+    width: 89%;
+    background-color: orange;
+}
+.cssbar{
+    width: 79%;
+    background-color: brown;
+}
+.javabar{
+    width: 85%;
+    background-color: blueviolet;
+}
+#contact{
+    margin: 0px 8%;
+}
+.iconcollection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.icon{
+    /* border: solid; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+}
+.icon:hover{
+    background-image: linear-gradient(to bottom right,white,yellow,orange,red);
+}
+.brands{
+    color: black;
+    font-size: 30px;
+}
+.icon:hover .brands{
+    color: white;
+    animation: rotate 1s ;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(30deg);
+    }
+    50%{
+        transform: rotate(-30deg);
+    }
+    100%{
+        transform: rotate(30deg);
+    }
+
+}
+footer{
+    margin-top: 8%;
+}
+#copyright{
+    text-align: center;
+    font-weight: 600;
+}
+.upArrow{
+    float: right;
+    margin: -40px 30px 30px 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    width: 10px;
+   
+}
+::-webkit-scrollbar-thumb{
+    color: orange;
+    border-radius: 10px;
+}

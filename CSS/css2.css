@@ -1,0 +1,33 @@
+*{
+    background-color: antiquewhite;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#head{
+    color: darkcyan;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 8px 8px 8px violet;
+}
+.group1{
+    color: brown;
+    font-weight: 700;
+    line-height: 1.5;
+}
+h2,h3{
+    color: cadetblue;
+}
+div h4{
+    text-align: center;
+    font-size: 26px;
+}
+div > img{
+    height: 300px;
+    width: 500px;
+}
+h5~p{
+    background-color: aqua;
+}
+div+p{
+    background-color: aquamarine;
+}
+

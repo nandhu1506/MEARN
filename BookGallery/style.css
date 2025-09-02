@@ -1,0 +1,134 @@
+/* ---------- Base & Variables ---------- */
+:root{
+  --bg: #f3f5f9;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --brand: #2c3e50;
+  --brand-2: #1a252f;
+  --accent: #0ea5e9;
+  --shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body{
+ background: url(https://thumbs.dreamstime.com/b/blurred-bookstore-background-creates-quiet-learning-atmosphere-wooden-table-vase-flowers-empty-surface-rows-bookshelves-324709575.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: lightslategray;
+}
+
+.logo{
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links{ list-style: none; display: flex; gap: 22px; }
+
+.nav-links a{
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+.nav-links a.active,
+.nav-links a:hover{ color: #fff; text-decoration: underline; }
+
+/* ---------- Hero ---------- */
+.hero{
+  text-align: center;
+  padding: 48px 20px 14px;
+  color: aqua;
+}
+
+.hero h1{
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+}
+
+.hero p{
+  margin-top: 8px;
+  color: chartreuse;
+  font-size: .98rem;
+}
+
+/* ---------- Gallery ---------- */
+.gallery{
+  max-width: 1200px;
+  margin: 26px auto 56px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+}
+
+.book-card{
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  align-items: start;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.book-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+}
+
+.book-card img{
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+.book-title{
+  font-size: 1rem;
+  padding: 12px 14px 0;
+}
+
+.author{
+  padding: 4px 14px 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.buy{
+  margin: 12px 14px 16px;
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: .9rem;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.buy:hover{ filter: brightness(.92); }
+
+/* ---------- Footer ---------- */
+.footer{
+  text-align: center;
+  color: #fff;
+  background: var(--brand);
+  padding: 16px;
+}

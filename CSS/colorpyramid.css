@@ -1,0 +1,65 @@
+*{
+    background-color: beige;
+}
+h1{
+    text-align: center;
+    color: darkblue;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    margin: 1px 0px;
+
+}
+.cell{
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+}
+.red{
+    background-color: red;
+}
+.greenyellow{
+    background-color: greenyellow;
+}
+.brown{
+    background-color: brown;
+}
+.violet{
+    background-color: violet;
+}
+.grey{
+    background-color: grey;
+}
+.purple{
+    background-color: purple;
+}
+.cadetblue{
+    background-color: cadetblue;
+}
+.yellow{
+    background-color: yellow;
+}
+.chocolate{
+    background-color: chocolate;
+}
+.crimson{
+    background-color: crimson;
+}
+.darkslateblue{
+    background-color: darkslateblue;
+}
+.forestgreen{
+    background-color: forestgreen;
+}
+.dodgerblue{
+    background-color: dodgerblue;
+}
+.gold{
+    background-color: gold;
+}
+.lawngreen{
+    background-color: lawngreen;
+}
+
+
