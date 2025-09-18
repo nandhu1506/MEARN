@@ -1,0 +1,13 @@
+console.log("Java Script")
+console.log(typeof "Java Script")
+console.log(1000)
+console.log(typeof 1000)
+console.log(100.2345432)
+console.log(typeof 100.235243432)
+console.log(true)
+console.log(typeof false)
+//concantenation
+console.log("JavaScript", typeof "Java Script")
+console.log("JavaScript"+ typeof "JavaScript")
+console.log(1000,typeof 1000)
+console.log(1000+ " " +typeof 1000)

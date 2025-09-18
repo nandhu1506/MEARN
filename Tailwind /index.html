@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind css</title>
+    <!-- tailwind css cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+</head>
+
+<body>
+    <div class="bg-[url(/images/image.png)] min-h-screen py-5 px-10 text-white font-medium">
+        <!-- navbar -->
+        <nav class="flex items-center justify-between">
+            <img class="w-40 cursor-pointer" src="./images/logo.png" alt="">
+            <ul class="flex">
+                <li class="px-5"><a href="">Home</a></li>
+                <li class="px-5"><a href="">About</a></li>
+                <li class="px-5"><a href="">Features</a></li>
+                <li class="px-5"><a href="">Contact</a></li>
+            </ul>
+            <img class="w-4 cursor-pointer" src="./images/cart.png" alt="">
+        </nav>
+        <!-- grid -->
+        <div class="grid md:grid-cols-2 mt-10 items-center">
+            <div >
+                <h1 class="text-7xl font-bold my-10">Groceries <br>
+                    Delivery in <br> 15 mins</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima debitis alias voluptas recusandae
+                    assumenda est accusamus modi quibusdam doloribus minus illo nemo aut quas, voluptatem provident quam
+                    doloremque voluptates vero?</p>
+                    <div class="mt-10">
+                        <a class="rounded-4xl bg-yellow-400 px-8 py-3 mr-5 hover:bg-transparent hover:border hover:border-yellow-500 " href="">Order Now</a>
+                        <a href="">Download App &#8595;</a>
+                    </div>
+            </div>
+            <img src="./images/grocery.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+
+            ----------------------------------------------
+                HTML - Hyper Text Markup Language
+            ----------------------------------------------
+
+    1. Used to display contents in webpage
+    2. Markup Language : Set of rules which define type of contents displayed in a document
+    3. HTML document consist of html tags
+    4. Tags: <start-tag>content</ending-tag>
+    5. Basic Structure of HTML document
+        <html>
+            <head>
+                <title>content</title>
+            </head>
+            <body>
+                contents tobe displayed in webpage
+            </body>
+        </html>
+    6. Basic Tags
+        - Can be divided into 2 types based on its display in browser
+            - Block elements : display content using entire width of browser
+            - Inline elements : display content according to its width
+        - Heading : h1,h2,h3,h4,h5,h6 tags
+        - Paragraph : p tag
+        - Text formating tags : b,em,mark,s,sup,sub
+        - links : a tag
+        - break : br tag
+        - container tags (div, section,article,main)
+        - horizontal line : hr
+        - list : ul ,ol ,li,dl 
+        - image - img tag
+        - video - video tags
+        - embedding : iframe tags
+        - forms - form tag
+        - input user data : input tag,button
+        - icons
+    
+
+            ----------------------------------------------
+                    CSS - Cascading Style Sheets
+            ----------------------------------------------
+
+    1. Used to Style html content
+    2. Applying CSS in html
+        - Inline CSS : use style attributes,syntax : style="property:value;"
+        - Internal CSS : use style tag to define css : syntax
+            <style> 
+                selectors{
+                    property:value;
+                }
+            </style>
+        - External CSS : using External css file to define style and link to html page, 
+        syntax :
+        selectors{
+                    property:value;
+            }
+    3. CSS selectors : used to select html elements into css 
+        - Using Tag Name
+        - Using id
+        - Using class name
+        - Universal selectors : *
+        - CSS Combinators
+            - Grouping selector (,)
+            - Using child selector (space, >)
+            - All sibling selector (~)
+            - Immeadiate sibling selector (+)
+    4. Box Model : Every content in webpage is displayed in a rectangular box.
+        - Margin : space between border and browser outline
+        - Border :
+        - Padding : space between border and content
+    5. CSS Properties
+        - Float
+        - Display 
+            - Inline
+            - Block
+            - Inline-Block
+            - flex : used to display contents as row and columns
+                - flex container : apply display flex
+                    - justify-content
+                    - align-items
+                    - flex-wrap
+                    - flex-direction
+                - flex item
+            - grid : used to display contents as row and columns and specify its size as well
+                - grid container : apply display as grid
+                    - grid-template-column : repeat(count,size)
+                    - grid-template-row
+                    - gap
+                - grid items
+        - Position
+            - static
+            - absolute
+            - relative
+            - fixed
+            - sticky
+        - Pseudo class : pseudo-class is used to define a special state of an element.
+        selector:pseudo-class {
+            property: value;
+            }
+        - linear-gradient() :  creates a linear gradient as the background.
+            linear-gradient(side-or-corner, angle, color-stop1, color-stop2, ...);
+        - CSS Animation
+            - @keyframes : to define Animation
+            - animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+    6. Animation Libraries
+        - Animate css : https://animate.style/
+        - AOS Animation
+    7. Deploy Website
+        - netlify
+    8. Responsive webpage : using Media Queries
+        - width and height of the viewport
+        - orientation of the viewport (landscape or portrait)
+        - resolution
+        - syntax
+        @media  (media feature) and (media feature) {
+        CSS-Code;
+        }
+
+
+            ----------------------------------------------
+                            GIT & GITHUB
+            ----------------------------------------------
+            
+    1. Git - Distributed version control system
+
+            ----------------------------------------------
+                    BOOTSTRAP - CSS framework
+            ----------------------------------------------
+    
+    1. Build fast, responsive sites
+    2. Common styling class
+        - color : light,dark,primary,danger,warning,info,secondary,success
+        - Margin : m-1/2/3/4/5 , mt , mb,ms, me
+        - Padding : p/pt/pb/ps/pe-1/2/3/4/5
+        - container : 
+        - container-fluid
+
+
+            ----------------------------------------------
+                TAILWIND CSS
+            ----------------------------------------------
+
+            ----------------------------------------------
+                FIGMA
+            ----------------------------------------------
+
+            ----------------------------------------------
+                JAVASCRIPT : Dynamically Typed Language
+            ----------------------------------------------
+
+    1. Data types : to identify data it uses typeof
+        - string
+        - number
+        - boolean
+    2. To joining different datas
+        - use comma to joining
+        - using concantenation
+    3. Variables : used to store data
+        - Variables of 3 types : syntax - variable-type variable-name
+            - var 
+            - const
+            - let
+                var                     const                   let
+        -------------------------------------------------------------------
+        1. use var keyword          use const keyword       use let keyword
+        2. Global scope             Block scope             Block scope
+        3. value can change         value cont be change    value can change
+        4. Hoisted with value       Hoisted without value   Hoisted without value
+
+    4. Hoisting : Moving creation of variable to top of the code, js allow variable hoisting
+    5. Operators in js
+        - Arithmetic Operators (+,-,*,/,%,**)

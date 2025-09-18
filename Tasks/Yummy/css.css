@@ -1,0 +1,252 @@
+header{
+    margin: 0px;
+    padding: 60px 35%;
+}
+#navlist{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+#navelements{
+    padding: 10px 35px;
+    list-style: none;
+}
+.list{
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+.list:hover{
+    text-decoration: underline;
+    color: magenta;
+}
+.cover{
+    margin: 0px 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    column-gap: 10px;
+}
+.col{
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    row-gap: 50px;
+}
+img{
+    width: 100%;
+}
+.imgdiscription{
+    text-align: center;
+    font-size: 23px;
+}
+ #toprecipes{ 
+    height: 100vh;
+}
+#toprecipehead
+{
+    display: inline-block;
+    background-color: #FC0254;
+    width: 40%;
+    height: 20px;
+    color: white;
+    text-align: right;
+    padding: 18px 0px;
+    padding-right: 40px;
+    line-height: 20px;
+}
+.toprecipes{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 50px;
+}
+#highlight{
+    display: grid;
+    grid-template-rows: 60% 40%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#highlight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+    display: block;
+}
+
+.recipecat{
+    background-color: #FC0254;
+    color: white;
+    width: fit-content ;
+    padding: 10px 30px;
+}
+.toprecipedes{
+    font-size: 20px;
+    font-weight: 600;
+}
+.toprecipelist{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-template-rows: repeat(4, 1fr);
+}
+.toprecipelistitem{
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 15px;
+    align-items: flex-start;
+}
+.toprecipelistitem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+#check{
+    display: none;
+}
+.icons{
+    font-size: 2rem;
+    margin: 0px 50px;
+    margin-bottom: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    display: none;
+    justify-content: center;
+}
+.featuredrecipe{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 200px;
+    gap: 100px;
+    background-color:azure;
+}
+#featuredtitle{
+    font-size: 25px;
+    font-weight: 520;
+}
+.featuredrecipeitem{
+    display: grid;
+    height: 300px;
+    grid-template-columns: 250px 1fr;
+    gap: 15px;
+    align-items: center;
+}
+.featuredrecipeitem img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+}
+.featuredrecipedes{
+    font-size: 16px;
+    text-align: justify;
+    line-height: 20px;
+}
+footer{
+    background-color: azure;
+    height: 25px;
+    text-align: center;
+    background-color: darkgray;
+}
+/* Responsive */
+@media (max-width:810px){
+    header{
+        padding: 10px 200px;
+    }
+    .cover{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        row-gap: 20px;
+    }
+    img{
+        aspect-ratio: 16/9;
+        width:  100%;
+    }
+    #navlist{
+        display: block;
+        text-align: center;
+        width: 100% ;
+        background-color: darkgray;
+    }
+    .navbar{
+        display: none;
+    }
+
+    .icons{
+        display: flex;
+    }
+    #close{
+        display: none;
+    }
+    
+    #check:checked~.icons #menu{
+        display: none;
+    }
+    #check:checked~.icons #close{
+        display: inline-flex;
+    }
+    #check:checked~.navbar{
+        display: block;
+    }
+    .toprecipes {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+    }
+    #highlight {
+        grid-template-rows: auto;
+        height: auto;
+    }
+    #highlight img {
+        height: auto;
+    }
+    .toprecipelist {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 15px;
+    }
+    .toprecipelistitem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+    .toprecipelistitem img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .listdesc h5, .listdesc p {
+        text-align: center;
+    }
+    #toprecipehead {
+        width: 80%;
+        padding: 12px 0;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    #toprecipes {
+        padding: 20px 10px;
+        height: auto;
+    }
+     .featuredrecipe {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        padding: 20px;
+    }
+    .featuredrecipeitem img {
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+    }
+}

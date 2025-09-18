@@ -1,0 +1,255 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+nav{
+     backdrop-filter: blur(5px);
+}
+#cover{
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/012/641/541/large_2x/young-person-hiking-female-standing-on-top-rock-backpack-woman-looking-at-beautiful-mountain-valley-at-sunlight-in-summer-landscape-with-sport-girl-high-hills-forest-sky-travel-and-tourism-photo.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    }
+.cover-text {
+    font-size: x-large;
+    position: relative;
+    z-index: 2;
+    padding-right: 20%;
+    }
+.cover-text h1{
+    font-family: Oswald;
+    font-size: 120px;
+}
+.cover-text p{
+    font-family: "Imperial Script";
+    font-size: 100px;
+}
+.cover-text p strong{
+    font-family: Oswald;
+}
+#submitbutton{
+    background-color: indigo;
+    color: white;
+}
+#submitbutton:hover{
+    border: solid;
+    border-color: gray;
+}
+#Package{
+    text-align: center;
+    padding: 50px 10px;
+}
+.card:hover{
+    box-shadow: -10px 10px 10px black;
+}
+#morepackages{
+    color: white;
+    background-color: blue;
+    margin-top: 20px;
+    border-radius: 100px;
+}
+#morepackages:hover{
+    background-color: crimson;
+}
+#Spclklfest{
+    text-align: center;
+}
+.carousel-inner{
+    display: flex;
+    font-size: xx-large;
+    height: 400px;
+    text-align: center;
+}
+.carousel-inner h5{
+    color: blue;
+    text-shadow: 3px 3px 5px white;
+    font-size: 100px;
+}
+.carousel-inner p{
+    color: darkslateblue;
+}
+.carousel-inner img{
+    height: 100%;
+}
+#gallery{
+    height: fit-content;
+    padding: 0px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#videowall{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,250px);
+    grid-auto-rows: 150px;
+    gap: 5px;
+}
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+.big-tile {
+    grid-row: span 2;
+}
+#NorthIndianTours{
+    text-align: center;
+}
+.cardcontainer{
+    display: flex;
+    padding: 10px 100px;
+    gap: 15px;
+}
+.tourcard {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: solid
+}
+.tourcard .cardimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 2;
+}
+.tourcard .cardinfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #23d5ab;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+.tourcard:hover .cardimg {
+    opacity: 0;
+}
+.tourcard:hover .cardinfo {
+    opacity: 1;
+}
+.btn-book {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform:uppercase;
+    transition: background 0.3s ease;
+}
+.btn-book:hover {
+    background-color: darkred;
+}
+#kashmir{
+    background: url("https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2024/01/15134114/kashmir-deepanshu-nayak-1600x900.jpeg") center/cover no-repeat;
+}
+#arunachal{
+    background: url("https://static2.tripoto.com/media/filter/tst/img/15546/TripDocument/1461574554_tawang_gate.jpg") center/cover no-repeat;
+}
+#punjab{
+    background: url("https://s7ap1.scene7.com/is/image/incredibleindia/golden-temple-punjab-hero?qlt=82&ts=1726662363452") center/cover no-repeat;
+}
+#rajasthan{
+    background: url("https://s7ap1.scene7.com/is/image/incredibleindia/2-mehrangarh-fort-jodhpur-rajasthan-city-hero?qlt=82&ts=1726660925514") center/cover no-repeat;
+}
+footer{
+    height:30vh;
+    color: white;
+    background-color: midnightblue;
+    padding: 40px 0px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #ffc107; 
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #ffc107;
+}
+.explore-img img {
+    max-width: 120px;
+}
+.feature-card {
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    .feature-card img {
+      width: 100px;
+      border-radius: 80%;
+      margin-bottom: 15px;
+    }
+    .feature-card h5 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .feature-card a {
+      color: purple;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .feature-card a:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .section-title h2 {
+      font-weight: bold;
+    }
+    .section-title p {
+      color: #e75480;
+      font-size: xx-large;
+      font-family: Imperial Script;
+    }

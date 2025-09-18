@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Imperial+Script&family=Playwrite+MX+Guides&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar z-3 bg-transparent navbar-light px-5 navbar-expand-lg fixed-top" >
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2 text-warning fw-bold" href="#">Travel <span class="fs-6 fw-normal text-dark">Guide</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Packages
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Transport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Hotel's</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Support</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+    </nav>
+    <!-- Cover -->
+     <section id="cover">
+    <div class="cover-text">
+      <h1>Travel</h1>
+      <p>far enough,<br><strong>You meet</strong><br>yourself</p>
+      <a href="#" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#DetailsForm">ENQUIRY</a>
+    </div>
+    <!-- modal form -->
+    <div class="modal fade" id="DetailsForm" tabindex="-1" role="dialog" aria-labelledby="DetailsForm" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100" id="DetailsFormtitle">Please Share Your Details</h5>
+      </div>
+      <div class="modal-body">
+        <form class="text-center">
+          <input type="text" class="form-control form-control-lg" placeholder="Name" required>
+          <input type="email" class="form-control form-control-lg" placeholder="Email" required>
+          <input type="tel" class="form-control form-control-lg" placeholder="Phone Number" required>
+          <select class="form-select form-control-lg" required>
+            <option value="">Your Preference</option>
+            <option value="honeymoon">Honeymoon Package</option>
+            <option value="family">Family Package</option>
+            <option value="solo">Solo Trip</option>
+          </select>
+          <input type="number" class="form-control form-control-lg" placeholder="Number of Members" min="1">
+          <textarea class="form-control form-control-lg" placeholder="Messages" rows="3"></textarea>
+          <button type="submit" id="submit-button" class="btn btn-submit  mt-2 ">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    </div>
+     </section>
+     <!-- Packages -->
+     <section id="Package">
+        <H1>HoneyMoon Packages</H1>
+        <div style="display: flex; justify-content: center;">
+        <div class="card" style="width: 20rem;">
+        <img height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjRKUfHuVNlP1uc1L46I4nwNI3hRxCgE3DA&s" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Kerala Honeymoon Packages</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+        </div>
+        <div class="card" style="width: 20rem;">
+        <img height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGcbDocET1GxRhTpTKimPLe3a7oW1p7ojIpA&s" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Maldives Honeymoon Packages</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+        </div>
+        <div class="card" style="width: 20rem;">
+        <img height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz2xLO7zdfzB1JhPiSFQWorsszp_DOVJWJXQ&s" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Goa Honeymoon Packages</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+        </div>
+        <div class="card" style="width: 20rem;">
+        <img height="100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGvMKicY8UaVIRvhdj10uoAfJtQ3OY031vkA&s" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Manali Honeymoon Packages</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <a href="#" class="btn btn-primary">Book Now</a>
+        </div>
+        </div>
+        </div>
+        <a href="" id="morepackages" class="btn btn-lg">More Packages</a>
+     </section>
+     <!-- special kerala festivals -->
+     <section id="Spclklfest">
+        <h1>Special Kerala Festival Tours</h1>
+        <!-- corousel -->
+         <div id="keralafestscarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img src="https://mytripstokerala.wordpress.com/wp-content/uploads/2016/08/kathakali.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Kathakali</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+        <a href="#" class="btn btn-lg btn-info">More</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://www.mathrubhumi.com/image/contentid/policy:1.8520567:1682867431/image/1may_jp12.jpg?$p=abed90c&w=856&q=0.8" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Trissur Pooram</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+        <a href="#" class="btn btn-lg btn-info">More</a>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img src="https://padipura.org/assets/img/aranmulla_padipura_subbanner.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Kerala Boat Race</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+        <a href="#" class="btn btn-lg btn-info">More</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#keralafestscarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#keralafestscarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+     </section>
+     <section id="gallery">
+        <div id="videowall" class="container">
+            <iframe width="660" height="415" src="https://www.youtube.com/embed/R83BlU5nnbs?si=UUCQGRw1PaKxN47M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="photowall" class="container py-4">
+          <div class="gallery-container">
+            <div ><img src="https://www.keralatravels.com/userfiles/1501134941_Kathakali1.jpg" alt="Tile 1" class="gallery-img"></div>
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStF9nzHmhngn3AyqtNgn2T35P30Zc4gD4p1w&s" alt="Tile 2" class="gallery-img"></div>
+            <div class="big-tile"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR88t87lY0dcY0z4OKrfHy1PgZn9rfTi6t8DA&s" alt="Tile 3" class="gallery-img"></div>
+            <div ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8uWyxc07wVw-EJglOztw9WzLSuhs-EvjI049AEnQr8cN1qK-tkICqJdlH-CSqSPnABdE&usqp=CAU" alt="Tile 4" class="gallery-img"></div>
+            <div class="big-tile"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd-R_W5RGbKo1ua33i-nPMEIh5xCmeT-RTug&s" alt="Tile 5" class="gallery-img"></div>
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGBzcR1DUubKrxa0aH0NsR2-QXeiZRlYjZzQ&s" alt="Tile 6" class="gallery-img"></div>
+            <div class="big-tile"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH7UKxxjkKZLxhO7UHR-1ODy49aSY7BA2Fgg&s" alt="Tile 7" class="gallery-img"></div>
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIm-n_sgnjkQGjJ2gOPQDMwQq8zjneGE1_DA&s" alt="Tile 8" class="gallery-img"></div>
+            <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6SXjPHdBovFIkNFAucql8cE23yp3QJsustw&s" alt="Tile 8" class="gallery-img"></div>
+          </div>
+        </div>
+     </section>
+     <section id="NorthIndianTours">
+      <h2 class="mb-4">North Indian Tour</h2>
+      <div class="cardcontainer">
+  <div class="tourcard">
+    <div class="cardimg" id="kashmir"></div>
+    <div class="cardinfo">
+      <h3>KASHMIR</h3>
+      <p>Rs : 14000 / person</p>
+      <button class="btn-book">Book Now</button>
+    </div>
+  </div>
+  <div class="tourcard">
+    <div class="cardimg" id="arunachal"></div>
+    <div class="cardinfo">
+      <h3>ARUNACHAL</h3>
+      <p>Rs : 16000 / person</p>
+      <button class="btn-book">Book Now</button>
+    </div>
+  </div>
+  <div class="tourcard">
+    <div class="cardimg" id="punjab"></div>
+    <div class="cardinfo">
+      <h3>PUNJAB</h3>
+      <p>Rs : 18000 / person</p>
+      <button class="btn-book">Book Now</button>
+    </div>
+  </div>
+  <div class="tourcard">
+    <div class="cardimg" id="rajasthan"></div>
+    <div class="cardinfo">
+      <h3>RAJASTHAN</h3>
+      <p>Rs : 15000 / person</p>
+      <button class="btn-book">Book Now</button>
+    </div>
+  </div>
+  </div>
+     </section>
+     <section id="premiumfeatures" class="container my-5">
+    <div class="section-title">
+      <h2>OUR PREMIUM FEATURES</h2>
+      <p>we will make your dreams come true</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3 col-6">
+        <div class="feature-card">
+          <img src="https://www.shutterstock.com/image-vector/boyfriend-girlfriend-riding-flat-vector-600nw-2414335719.jpg" alt="Bike Ride">
+          <h5>FREE BIKE RIDE</h5>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card">
+          <img src="https://st2.depositphotos.com/1008801/11026/v/950/depositphotos_110269732-stock-illustration-cartoon-bonfire-on-night-landscape.jpg" alt="Campfire">
+          <h5>CAMPFIRE</h5>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712009.png" alt="Support">
+          <h5>24X7 SUPPORT</h5>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="feature-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-eBF2OVo5z0X-TzE2_UgN9_4Ow9G7Pa5iJw&s" alt="Tour Guide">
+          <h5>TOUR GUIDE</h5>
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+     </section>
+     <footer>
+      <div class="container">
+    <div class="row text-center text-md-start align-items-center">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold">ABOUT US</h5>
+        <a href="#">Our Company</a>
+        <a href="#">Our Management</a>
+        <a href="#">Connections</a>
+        <a href="#">Annual Reports</a>
+        <a href="#">Our Network</a>
+      </div>
+      <div class="col-md-4 mb-4 text-center">
+        <h5 class="fw-bold ">SOCIAL MEDIA</h5>
+        <div class="social-icons d-flex justify-content-center" >
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 text-center text-md-end explore-img">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Explore the World" class="img-fluid">
+        <p class="mt-2">Explore the World</p>
+      </div>
+    </div>
+  </div>
+     </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
