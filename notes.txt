@@ -155,6 +155,7 @@
     2. To joining different datas
         - use comma to joining
         - using concantenation
+        - using template literals
     3. Variables : used to store data
         - Variables of 3 types : syntax - variable-type variable-name
             - var 
@@ -170,3 +171,39 @@
     4. Hoisting : Moving creation of variable to top of the code, js allow variable hoisting
     5. Operators in js
         - Arithmetic Operators (+,-,*,/,%,**)
+        - Relational Operators ( < > <= >= != == === )
+        - Logical Operators ( && ||)
+                ADD           OR            NOT
+            T && T = T      T || T = T      !T = F
+            T && F = F      T || F = T      !F = T
+            F && T = F      F || T = T
+            F && F = F      F || F = F
+        - Increment / Decrement Operators (++ --)
+        - Shorthand Operators (+= -= *= )
+        - Truthy Operators (&&) : condition && Statements when  condition become true
+        - Ternary Operators (?:) : condition ? Statements when  condition become true : Statements when  condition become false
+    6. Conditional Statements
+        - if Statements : 
+            syntax  - if(condition){ Statements when  condition become true }
+        - if-else Statements :
+            syntax  - if(condition){ Statements when  condition become true }
+            else{   Statements when  condition become false  }
+        - else-if Statements
+        - switch 
+    7. Looping Statements
+        - while loop :
+            - syntax 
+            1. Initialise a variable
+            2. while(condition should include variable used to Initialise){
+                steps to be performed when condition become true
+            3.  change value of  variable used in condition
+            }
+        - for loop :
+            - syntax
+            for(Initialise a variable;condition that include variable used to Initialise;change value of  variable used in condition){
+                steps to be performed when condition become true
+            }
+            - break Statements : used to forcefully exit from a loop
+            - continue Statements : used to skip a loop for a condition
+        - Nested Loop : Loop inside another loop
+            - 
