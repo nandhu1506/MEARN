@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header d-flex bg-info justify-content-between p-3">
+        <img width="100px" src="" alt="logo">
+        <button onclick="logout()" class="btn btn-link text-light fs-3">Logout</button>
+    </div>
+    <div class="p-5">
+        <h1 class="text-danger"> Hi <span id="usetname"></span></h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta est veniam dolore. Quisquam, cum, sint sequi aut facere ab pariatur dolorem est, dignissimos illum quos nam repellat non temporibus excepturi?
+        Aliquid assumenda maiores, dolore, voluptatem consectetur quae necessitatibus ad reiciendis voluptatibus totam, fugiat sequi alias debitis molestias! Tenetur totam, itaque id necessitatibus minus illo, ducimus laudantium eum vero architecto deserunt?
+        Sed voluptas iure illo odio deleniti itaque provident explicabo fugit. Quaerat delectus nulla reiciendis similique pariatur doloribus quis veniam cum ullam? Quis accusamus quas error nulla dolor voluptatum ad maiores.
+        Soluta eaque fugit similique veritatis, dolor minima. Temporibus ipsam commodi sint aspernatur modi voluptas quas incidunt, similique debitis illum ut laborum alias excepturi recusandae nemo eveniet voluptates assumenda est tenetur!
+        Excepturi, neque qui assumenda quod eaque facilis eveniet voluptatibus eos doloremque cum reprehenderit commodi odio, recusandae delectus deserunt maxime consectetur voluptate itaque vel aut perspiciatis reiciendis obcaecati. Nisi, obcaecati nesciunt.
+    </div>
+</body>
+<script>
+    const username = localStorage.getItem("username")
+    user.innerHTML = username
+
+    if(!username){
+        alert("Please Login")
+        window.location = "index.html"
+    }
+
+    const logout = ()=>{
+        localStorage.removeItem("username")
+        window.location ="index.html"
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

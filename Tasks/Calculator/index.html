@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calculator {
+      background-color: gray;
+      padding: 20px 30px;
+      border-radius: 20px;
+      width: 400px;
+    }
+
+    #result {
+      width: 100%;
+      height: 80px;
+      font-size: 1.8em;
+      text-align: right;
+      border: solid;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #e0e0e0;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+    }
+    
+    .equal {
+      grid-column: span 2;
+    }
+
+    .clear {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="buttons">
+      <button class="equal" onclick="clearCalcDisplay()">AC</button>
+      <button onclick="removeLastDigit()">C</button>
+
+      <button class="operator" onclick="displayContent('/')">÷</button>
+
+      <button onclick="displayContent('7')">7</button>
+      <button onclick="displayContent('8')">8</button>
+      <button onclick="displayContent('9')">9</button>
+      <button class="operator" onclick="displayContent('x')">×</button>
+      <button onclick="displayContent('4')">4</button>
+      <button onclick="displayContent('5')">5</button>
+      <button onclick="displayContent('6')">6</button>
+      <button class="operator" onclick="displayContent('-')">−</button>
+
+      <button onclick="displayContent('1')">1</button>
+      <button onclick="displayContent('2')">2</button>
+      <button onclick="displayContent('3')">3</button>
+      <button class="operator" onclick="displayContent('+')">+</button>
+
+      <button onclick="displayContent('0')">0</button>
+      <button onclick="displayContent('.')">.</button>
+      <button class="equal" onclick="calcResult()">=</button>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+
+</body>
+</html>

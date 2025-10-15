@@ -4,10 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Everything</title>
+    <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
-   
+<body class="container-fluid">
+   <nav class="navbar navbar-expand-lg container-fluid fs-5">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-1" href="#">Area</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Benifits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Specifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">How-To</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Contact US</a>
+        </li>
+        <li></li>
+      </ul>
+      <button class="btn rounded-pill btn-success" type="submit">Learn More &#x2197</button>
+    </div>
+  </div>
+</nav>
+<section id="browseEverything" class="text-center">
+    <h1 class="fw-bold" id="browseEverything-text">Browse Everything</h1>
+    <img src="./Assets/tab.png" alt="">
+    <div id="browseEverything-color-bg"></div>
+</section>
+<section id="trustedBy" class="container-fluid text-secondary-emphasis p-4">
+    <p class="text-secondary-emphasis">Trusted By : </p>
+    <div class="d-flex justify-content-evenly row">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo1.png" alt="">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo2.png" alt="">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo3.png" alt="">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo4.png" alt="">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo5.png" alt="">
+        <img class="col-md-2 col-sm-6" src="./Assets/logo6.png" alt="">
+    </div>
+</section>
+<section id="benifits" class="p-5">
+  <div>
+    <h6>Benifits</h6>
+    <h1 class="py-5">We’ve cracked the code.</h1>
+    <h6 class="pb-5">Area provides real insights, without the data overload.</h6>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <img src="./Assets/amplifylogo.png" alt="">
+      <h6>Amplify Insights</h6>
+      <p>Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.</p>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <img src="./Assets/globelogo.png" alt="">
+      <h6>Amplify Insights</h6>
+      <p>Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.</p>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <img src="./Assets/humanlogo.png" alt="">
+      <h6>Amplify Insights</h6>
+      <p>Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.</p>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+      <img src="./Assets/stocklogo.png" alt="">
+      <h6>Amplify Insights</h6>
+      <p>Unlock data-driven decisions with comprehensive analytics, revealing key opportunities for strategic regional growth.</p>
+    </div>
+  </div>
+</section>
+<section id="mountainimg">
+  <div>
+    <img class="img-fluid " style="width: 100%; height:min-content;" src="./Assets/mountain.png" alt="">
+  </div>
+</section>
+<section id="bigpicture" class="mt-5">
+  <div class="row">
+    <div class="col-lg-6 container">
+    <h1 id="bigpicturehead">See the Big Picture</h1>
+    <p id="bigpicturetitle">
+      Area turns your data into clear, vibrant visuals that show you exactly what’s happening in each region.
+    </p>
+    <div id="bigpicturelist" class="text-start">
+      <div id="bigpictureitem">
+        <span id="listnumber">01</span>
+        Spot Trends in Seconds: No more digging through numbers.
+      </div>
+      <div id="bigpictureitem">
+        <span id="listnumber">02</span>
+        Get Everyone on the Same Page: Share easy-to-understand reports with your team.
+      </div>
+      <div id="bigpictureitem">
+        <span id="listnumber">03</span>
+        Make Presentations Pop: Interactive maps and dashboards keep your audience engaged.
+      </div>
+      <div id="bigpictureitem">
+        <span id="listnumber">04</span>
+        Your Global Snapshot: Get a quick, clear overview of your entire operation.
+      </div>
+    </div>
+    <button id="discovermore" class="btn btn-discover rounded-5 mx-3 my-5">Discover More</button>
+  </div>
+    <div class="col-lg-6">
+      <img class="img-fluid rounded-5" src="Assets/cylinder.png" alt="">
+    </div>
+  </div>
+</section>
+<section class="text-center mt-5">
+  <p id="bigpicturetitle">Specs</p>
+  <h1 id="bigpicturehead">Why Choose Area?</h1>
+  <p id="bigpicturetitle">You need a solution that keeps up. That’s why we developed Area. A developer-friendly approach to streamline your business. </p>
+<button id="discovermore" class="btn btn-discover rounded-5 mx-3 my-5">Discover More</button>
+</section>
+<section>
+<table class="table container table-bordered text-center">
+  <thead>
+    <tr>
+      <th scope="col">Area</th>
+      <th scope="col">WebSurge</th>
+      <th scope="col">HyperView</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&#10003; Ultra-fast browsing</td>
+      <td>&#10003; Fast browsing</td>
+      <td>&#10007; Moderate speeds</td>
+    </tr>
+    <tr>
+      <td>&#10003; Advanced AI insights</td>
+      <td>&#10007; Basic AI recommendations</td>
+      <td>&#10007; No AI assistance</td>
+    </tr>
+    <tr>
+      <td>&#10003;Seamless integration</td>
+      <td>&#10003;Restricts customization</td>
+      <td>&#10007; Steep learning curve</td>
+    </tr>
+    <tr>
+      <td>&#10003;Advanced AI insights</td>
+      <td>&#10003;Basic AI insights</td>
+      <td>&#10007; No AI assistance</td>
+    </tr>
+    <tr>
+      <td>&#10003;Ultra-fast browsing</td>
+      <td>&#10003;Fast browsing</td>
+      <td>&#10007; Moderate speeds</td>
+    </tr>
+    <tr>
+      <td>&#10003;Full UTF-8 support</td>
+      <td>&#10007; Potential display errors</td>
+      <td>&#10007; Partial UTF-8 support</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+<section id="quote" class="my-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <img class="img-fluid rounded-5" src="Assets/quoteball.png" alt="">
+    </div>
+    <div class="col-lg-6 d-flex flex-column justify-content-center p-5">
+      <p class="fs-5 text-dark  fst-italic mb-4">“I was skeptical, but Area has completely transformed the way I manage my business. The data visualizations are so clear and intuitive, and the platform is so easy to use. I can't imagine running my company without it.”</p>
+      <div>
+      <h6 class="mb-0 fw-semibold text-dark">John Smith</h6>
+      <small class="text-secondary">Head of Data</small>
+    </div> 
+    </div> 
+  </div>
+</section>
+<section id="mapyoursuccess " class="border-top container-fluid">
+  <div class="container d-flex justify-content-between p-5 ">
+    <h1>Map Your Success</h1>
+    <button id="discovermore" class="btn btn-discover rounded-5 mx-3">Discover More</button>
+  </div>
+  <div id="tile-section" class="row">
+    <div id="tiles" class="col-lg-4 p-5 border-top">
+      <div id="num" class="text-secondary fs-1 my-5">01</div>
+      <div class="my-5">Get Started</div>
+      <div class="text-secondary">With our intuitive setup, you’re up and running in minutes.</div>
+    </div>
+    <div id="tiles" class="col-lg-4 p-5 border-top">
+      <div id="num" class="text-secondary fs-1 my-5">02</div>
+      <div class="my-5">Customize and Configure</div>
+      <div class="text-secondary">Adapt Area to your specific requirements and preferences.</div>
+    </div>
+    <div id="tiles" class="col-lg-4 p-5 border-top">
+      <div id="num" class="text-secondary fs-1 my-5">03</div>
+      <div class="my-5">Grow Your Business</div>
+      <div class="text-secondary">Make informed decisions to exceed your goals.</div>
+    </div>
+  </div>
+</section>
+<section id="greenmountain" class="p-3 ">
+  <img class="img-fluid w-100 rounded-5" style="height: 90vh;" src="./Assets/greenmountain.png" alt="">
+</section>
+<section id="contactus" class="my-5">
+  <div class="text-center">
+  <h1>Connect With US</h1>
+  <small class="text-secondary">Schedule a quick call to learn how Area can turn your regional data into a powerful advantage.</small>
+  </div>
+  <div class="d-flex justify-content-center">
+  <button class="btn rounded-pill btn-success w-50" type="submit">Learn More &#x2197</button>
+  </div>
+</section>
+<footer style="height: fit-content;">
+  <div class="container-fluid py-2">
+    <a class="text-decoration-none text-black px-3" href="">Benefits</a>
+    <a class="text-decoration-none text-black px-3" href="">Specification</a>
+    <a class="text-decoration-none text-black px-3" href="">How-To</a>
+  </div>
+  <div class="m-2 p-3 d-flex justify-content-between align-items-end position-relative">
+    <div class="d-flex align-items-end gap-3">
+      <img height="50px" src="./Assets/man.png" alt="">
+      <div class="d-flex gap-3">
+        <div><h6 class="text-secondary ">&copy Area.</h6></div>
+        <div><h6 class="text-secondary ">2025</h6></div>
+      </div>
+    </div>
+    <div class="text-secondary">All Rights Reserved</div>
+  </div>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
