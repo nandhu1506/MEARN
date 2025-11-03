@@ -12,7 +12,7 @@
         <h1>Add Your ToDos Here</h1>
         <div class="d-flex my-5">
             <input placeholder="Todo" type="text" class="form-control me-2" name="" id="userInput">
-            <button onclick="addTodo()" class="btn btn-outline-primary ">Add</button>
+            <button onclick="add()" class="btn btn-outline-primary ">Add</button>
         </div>
         <h1 class="text-primary my-5">List of Todo's</h1>
         <div id="output" class="d-flex flex-wrap"></div>
@@ -34,7 +34,7 @@
                 </div>
                 `
             })
-            
+                
             }else{
                 alert("Input valid data!!!")
         }

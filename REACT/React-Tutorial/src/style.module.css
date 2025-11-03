@@ -1,0 +1,14 @@
+.para{
+    text-align: justify;
+    margin: 20px;
+    border: 10px solid;
+    padding: 10px;
+}
+#submitBtn{
+    border: solid;
+    background-color: blue;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+}

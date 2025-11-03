@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>  
+  <div style="min-height: 100ch;" class=" d-flex justify-content-center align-items-center flex-column container-fluid">
+        <h1>Add Your Task Here</h1>
+        <div class="d-flex my-5">
+            <input placeholder="Task" type="text" class="form-control me-2" name="" id="userInput">
+            <input placeholder="Description" type="text" class="form-control me-2" name="" id="userDesc">
+            <button onclick="addTask()" class="btn btn-outline-primary ">Add</button>
+        </div>
+        <h1 class="text-primary my-5">Task List</h1>
+        <div id="output" class=" flex-wrap">
+          <!-- <div class="border rounded justify-content-center d-flex align-items-center m-2 p-3">
+                <h5>Task</h5>
+                <input id="taskStatus" type="checkbox" class="form-check-input  mx-1"> 
+                <button class="btn text-danger" ><i class="fa-solid fa-trash"></i></button>
+                </div> -->
+        </div>
+    </div>
+</body>
+<script>
+  let taskList = sessionStorage.getItem("taskList") || []
+  const save = () => {
+    sessionStorage.setItem("taskList", taskList);
+  };
+
+  const viewTask =()=>{
+  taskList.forEach((item,index)=>{
+  output.innerHTML +=`
+    <div class="border rounded justify-content-center d-flex align-items-center m-2 p-3">
+    <h5>${item}</h5>
+    <input id="taskStatus" type="checkbox" class="form-check-input  mx-1"> 
+    <button onclick="editTask(${index})" class="btn text-danger" ><i class="fa-solid fa-pencil"></i></button>
+    <button onclick="deltask(${index})" class="btn text-danger" ><i class="fa-solid fa-trash"></i></button>
+    </div>
+  `              
+  })
+  }
+  const addTask = ()=>{
+  task=userInput.value
+  desc=userDesc.value
+  if(task===""){
+    alert("Please Enter the task")
+    return
+  }
+  taskList.push({task,desc})
+  console.log(taskList);
+  userInput.value=""
+  output.innerHTML=""
+  save()
+  viewTask()
+  }
+
+  const deltask = (index)=>{
+    taskList.splice(index,1)
+    console.log(taskList);
+    output.innerHTML=""
+    save()
+    viewTask()
+  }
+  const editTask =(index)=>{
+    userInput.value=taskList[index]
+    taskList.splice(index,1)
+    save()
+  }
+  window.onload=viewTask
+</script>
+</html>

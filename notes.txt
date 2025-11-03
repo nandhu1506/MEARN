@@ -1,4 +1,4 @@
-  
+
             ----------------------------------------------
                 HTML - Hyper Text Markup Language
             ----------------------------------------------
@@ -289,10 +289,12 @@
             - hasOwnProperty( ) : syntax - object-name.hasOwnProperty(key)
         - To access all keys : Object.keys(object-name)
         - To access all values : Object.values(object-name)
+        - Object Destructuring : used to access values from an object using 'key' without using dot or bracket Notation
+            -ex: const/var/let {key1,key2,...} = object-name
     13. Object Oriented Programming (OOps): 
         - Basic Concepts
             - Class : Blueprint of object
-                  - class Class-name{
+                - class Class-name{
                     class Properties
                     constructor method
                     class methods - function
@@ -307,7 +309,10 @@
                 - Prototype Inheritance : using __proto__ keyword
             - Polymorphism : 
             - Encapsulation : 
-            - Abstraction : 
+            - Abstraction :
+    14. Data shairing between files in js
+        -  import & export Statements, If we want share a data from a file it must be export from there, and to use data in another file it must import
+
 
     JAVASCRIPT : IN BROWSER
     ---------------------------
@@ -341,9 +346,9 @@
             - to clear all items : clear()
     9. Working of JAVASCRIPT in browser
         - JS Engine : It handle js execution, convert js code to code that understood by browser
-             - Two Parts for executing js
+            - Two Parts for executing js
                 - Heap : Storage for variable and objects used by code
-                - Call Stack : used track currently executing functions. It will make sure each function completion before the starting next one. JS uses only one call stack since it known as Single Threaded Programming Language. It handle 2 types of functi  ons
+                - Call Stack : used track currently executing functions. It will make sure each function completion before the starting next one. JS uses only one call stack since it known as Single Threaded Programming Language. It handle 2 types of functions
                     - Synchronous function : performed one after the other, in sequence. Handled directly in call stack
                     - Asynchronous function : allows multiple tasks to run independently of each other. Generally 2 types Asynchronous functions in js.
                         - Browser API & Timer functions : These functions will stored 'macrotask' queue, ex: setTimeOut() , setInterval(), event in browser
@@ -405,3 +410,96 @@
                         body:{}
                     }
         - using axios library : return promise object
+    
+
+
+            ----------------------------------------------
+                REACT - ADVANCED FRONT END TECHNOLOGY
+            ----------------------------------------------
+
+    1. React is an open-source JavaScript library used for building user interfaces (UIs), especially for single-page applications (SPAs).
+    2. Features 
+        - Component-Based Architecture : they arranged in tree Structure
+        - Declarative Programming
+        - Virtual DOM = Fast Updates : Memory representation of real DOM
+        - Reactive Data Flow : parent to child data shairing
+        - JSX (JavaScript XML) : JavaScript extension for writing html codes in Component
+    3. React project creation : using vite 
+        - Requirement : node & npm 
+        - project creation command using vite : npm create vite@latest 
+        - Run react app using vite : 'npm run dev' in react project folder
+    4. Files & Folder Structure of react app
+        - vite.config.js : configuration file for Vite
+        - README.md : project documentation file
+        - package.json : npm configuration file of project
+        - package-lock.json : exact versions of all the dependencies
+        - index.html : entry point of your app
+        - eslint.config.js : main configuration file for ESLint
+        - .gitignore : is contents should avoided before adding to git
+        - node_modules folder : contains all the JavaScript libraries your project depends on. creating node_modules using 'npm install'
+        - public folder : data can be accessed equally from project
+        - src folder : react project 
+            - assets folder : images/multi media used in webpage
+            - CSS (App.css & index.css) files : for global styling react app
+            - App.jsx : React app Root component file
+            - main.jsx : Create root component for react app should be rendered in index.html page
+    5. JSX JavaScript XML : used to enable html codes in JavaScript
+        - used to create UI 
+        - Rules of JSX
+            - Every jsx elements must be in a single tag , That tag can be any container tags (div,section,article etc) or react fragments (nameless tags : <> </>)
+            - Every jsx tag must have closing tag. ( tags with contents : <tag>content</tag> , tags without content : <tag/> self closing tags)
+            - JSX uses camel case to write attibute name or inline css property name / value, camelCase
+            - Attributes like 'for' and 'class' in jxs is 'htmlFor' and 'className'
+            - Can use js directly in JSX, using curly braces {js codes}
+    6. Component : used for design UI, multiple components can be in react app, and they are arranged in tree Structure, by default root component of react app is 'App' component
+        - Component Creation : Create a jsx/js file with filename starts with 'capital' letter
+        - Component Lifecycle Phases of react component
+            1. Mounting Phase : Adding/Putting jsx into DOM
+                - constructor()
+                - getDerivedStateFromProps()
+                - render()
+                - componentDidiMount()
+            2. Updating Phase : when component become change
+                - getDerivedStateFromProps()
+                - shouldComponentUpdate()
+                - render()
+                - getShapShotBeforeUpdate()
+                - componentDidUpdate()
+            3. Unmounting Phase : Removing component from DOM
+                - componentWillUnmount()
+        - Component can be of 2 types
+            - Functional Based component : Using js pure function, it must return 'jsx' code
+            - Class Based component : Using js class, it must return 'jsx' code in 'render' method 
+        - Difference between Class & Functional based component
+                    Class Component                         Functional component
+            ------------------------------------------------------------------------------
+            1. Created using js class, it render        1. Created using js pure function, it return 
+            method return jsx                           jsx codes
+            2. React Component feature & Lifecycle      2. LC methods not available
+            are available
+            3. props in Constructor argument            3. Props in Functional component argument
+            4. Stateful component                       4. Stateless component
+            5. Hooks not used                           5. Hooks used
+    7. Styling react elements
+        - Inline CSS : directly we can apply css to jsx elements using style attribute, here style must be in js object, use camelCase
+        - External CSS : styling using external css file, to link external css with component using import Statements
+        - CSS module file : styling using files with extension as .module.css where we can add css code , to link external css with component using import Statements
+    8. Event Handling in React : event = function call
+        - Function without argument : event-name={functionName}
+        - Function with argument : event-name={()=>functionName(arg1,...)}
+        - Function with argument as event : event-name={(event)=>functionName(event)}
+    9. Props : Is property of a component ,and is used to share data from parent to child, Props ia object, 
+        - In Functional component, props will be in function argument , props cannot be changed
+    10. Conditional Rendering : In react we can control the visibility of jsx element based on condition
+        - use js conditional Statements & ternary /truthy Operator
+    11. State : Is a variable used to store values in components, Whenever 'state' changes then Component will render. It Generally an object, to update state use 'setState()' method.
+    12. Hooks : are Predefined functions, for providing react state and life cycle methods to functional component
+        - Rules for calling hooks in functional component
+            - import hook
+            - hooks used at the top of component
+            - hooks cannot be conditional
+            - all hooks are starts with 'use' keyword
+        - Commonly used Predefined Hooks
+            - useState() : used to create state in functional component, Returns a stateful value, and a function to update it.
+                - syntax: const [state-name,state update function-name] = useState(initial value of state)
+    13. Handling List/Array in React : using map method,  array can be displayed in jsx. To identify duplicated jsx element by component using its 'key' attribute
