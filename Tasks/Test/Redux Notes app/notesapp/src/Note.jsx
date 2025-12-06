@@ -15,10 +15,9 @@ function Note() {
   );
 
   return (
-    <div style={{ maxWidth: 400, margin: "auto", padding: 20,  textAlign:"center"}}>
+    <div style={{ maxWidth: 400, margin: "auto", padding: 20, textAlign: "center" }}>
       <h1>Notes App</h1>
 
-      
       <input
         style={{ width: "100%", padding: 8 }}
         placeholder="Enter Title..."
@@ -36,7 +35,7 @@ function Note() {
         style={{ marginTop: 10, padding: 8, width: "100%" }}
         onClick={() => {
           if (text.trim()) {
-            dispatch(addNote({title,text}));
+            dispatch(addNote({ title, text }));
             setTitle("");
             setText("");
           }
@@ -60,8 +59,8 @@ function Note() {
             }}
           >
             <div>
-                <h3>{note.title}</h3>
-                <p>{note.text}</p>
+              <h3>{note.title}</h3>
+              <p>{note.text}</p>
             </div>
 
             <button onClick={() => dispatch(deleteNote(note.id))}>❌</button>
@@ -75,31 +74,31 @@ function Note() {
       />
       <ul style={{ marginTop: 20 }}>
         {searchText ? (
-      filteredNotes.length > 0 ? (
-        filteredNotes.map(note => (
-           <li
-            key={note.id}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "8px 0",
-            }}
-          >
-            <div>
-                <h3>{note.title}</h3>
-                <p>{note.text}</p>
-            </div>
+          filteredNotes.length > 0 ? (
+            filteredNotes.map(note => (
+              <li
+                key={note.id}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "8px 0",
+                }}
+              >
+                <div>
+                  <h3>{note.title}</h3>
+                  <p>{note.text}</p>
+                </div>
 
-            <button onClick={() => dispatch(deleteNote(note.id))}>❌</button>
-          </li>
-        ))
-      ) : (
-        <p>No notes found</p>
-      )
-    ) : (
-      <></>
-    )}
-    </ul>
+                <button onClick={() => dispatch(deleteNote(note.id))}>❌</button>
+              </li>
+            ))
+          ) : (
+            <p>No notes found</p>
+          )
+        ) : (
+          <></>
+        )}
+      </ul>
 
     </div>
   );
