@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { use, useContext, useState } from 'react'
 import { FaEye, FaEyeSlash, FaUser } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
+import { googleloginAPI, loginAPI, registerAPI } from '../services/allAPI'
+import { GoogleLogin } from '@react-oauth/google'
+import { jwtDecode } from "jwt-decode"
+import { routeGuardContext } from '../contextAPI/AuthContext'
 
 function Auth({registerURL}) {
-  
+
+  const {role,authorisedUser,setAuthorisedUser} = useContext(routeGuardContext)
+  const navigate = useNavigate()
   const [invalidUsername,setinvalidUsername] = useState(false)
   const [invalidEmail,setinvalidEmail] = useState(false)
   const [invalidPassword,setinvalidPassword] = useState(false)
@@ -44,15 +50,100 @@ function Auth({registerURL}) {
       }
     }
   }
-  const handleRegister =(e)=>{
+  const handleRegister = async (e)=>{
     e.preventDefault()
     const{username,email,password} = userDetailes
     if(username && email && password){
-    alert("api Call")
+      // alert("api Call")
+      try {
+        const result = await registerAPI(userDetailes)
+        // result in 200, 409, 500
+        if(result.status==200){
+          toast.success("Registered Successfully.. Please Login")
+          setUserDetailes({username:"",email:"",password:""})
+          navigate('/login')
+        }else if(result.status==409){
+          toast.warning(result.response.data)
+          setUserDetailes({username:"",email:"",password:""})
+          navigate('/login')
+        }else{
+          toast.error("Somthing Went Wrong")
+          setUserDetailes({username:"",email:"",password:""})
+
+        }
+
+      } catch (err) {
+        console.log(err);
+        
+      }
     }else{
     return toast.warning("Please complete the form")
     }
   }
+
+  const handleLogin= async (e)=>{
+    e.preventDefault()
+    const{email,password} = userDetailes
+    if(email && password){
+      // alert("api Call")
+      const result = await loginAPI(userDetailes)
+      if(result.status==200){
+        toast.success("Login Successfull")
+        sessionStorage.setItem("token",result.data.token)
+        sessionStorage.setItem("user",JSON.stringify(result.data.user))
+        setUserDetailes({username:"", email:"", password:""})
+        setAuthorisedUser(true)
+        setTimeout(()=>{
+          if(result.data.user.role=="admin"){
+            navigate('/admin/home')
+          }else{
+            navigate('/')
+          }
+        },2500);
+      }else if (result.status==401 || result.status==404){
+        toast.warning(result.response.data)
+        setUserDetailes({username:"", email:"", password:""})
+      }else{
+          return toast.error("Somthing went Wrong !!!")
+          console.log(result);
+      }
+          
+    }
+    else{
+      toast.warning("Please Fill The Form Completely")
+    }
+  
+  }
+
+  const handleGoogleLogin= async (credentialResponse)=>{
+    
+    // console.log(credentialResponse);
+    const decode = jwtDecode(credentialResponse.credential)
+    // console.log(decode);
+    console.log(decode.email,decode.name,decode.picture);
+    const result = await googleloginAPI({username:decode.name,email:decode.email,password:'googlePassword',picture:decode.picture})
+    if(result.status==200){
+        toast.success("Login Successfull")
+        sessionStorage.setItem("token",result.data.token)
+        sessionStorage.setItem("user",JSON.stringify(result.data.user))
+        setAuthorisedUser(true)
+        setTimeout(()=>{
+          if(result.data.user.role=="admin"){
+            navigate('/admin/home')
+          }else{
+            navigate('/')
+          }
+        },2500);
+      }else{
+          return toast.error("Somthing went Wrong !!!")
+          console.log(result);
+      }
+
+
+  }
+
+
+
 
   return (
     <div className='w-full min-h-screen flex justify-center items-center bg-[url(https://thumbs.dreamstime.com/b/books-table-library-bookstore-blur-background-books-table-library-bookstore-blur-background-279011960.jpg)] bg-cover bg-center text-white)] bg-cover bg-center text-white'>
@@ -70,17 +161,17 @@ function Auth({registerURL}) {
             {/* Username - Register */}
             {registerURL&&
             <>
-            <input onChange={(e)=>validateInputs(e.target)} name='username' type="text" placeholder='UserName' className="bg-white p-3 w-full rounded my-5 text-black" />
+            <input value={userDetailes.username} onChange={(e)=>validateInputs(e.target)} name='username' type="text" placeholder='UserName' className="bg-white p-3 w-full rounded my-5 text-black" />
             {invalidUsername && <div className='text-yellow-500 mb-5'>Invalid Username</div>}
             </>
             }
             {/* Email */}
-            <input onChange={(e)=>validateInputs(e.target)} name='email' type="text" placeholder='Email' className="bg-white p-3 w-full rounded my-5 text-black" />
+            <input value={userDetailes.email} onChange={(e)=>validateInputs(e.target)} name='email' type="text" placeholder='Email' className="bg-white p-3 w-full rounded my-5 text-black" />
             {invalidEmail && <div className='text-yellow-500 mb-5'>Invalid Email</div>}
 
             {/* Password */}
             <div className="flex items-center">
-              <input onChange={(e)=>validateInputs(e.target)} name='password' type={viewPassword?"text":"password"} placeholder='Password' className="bg-white p-2 w-full rounded mb-5 text-black" />
+              <input value={userDetailes.password} onChange={(e)=>validateInputs(e.target)} name='password' type={viewPassword?"text":"password"} placeholder='Password' className="bg-white p-2 w-full rounded mb-5 text-black" />
               {viewPassword?
               <FaEyeSlash onClick={()=>setViewPassword(!viewPassword)}  className='text-gray-400' style={{marginLeft:'-30px', marginTop:'-20px'}}/>
               :
@@ -100,11 +191,28 @@ function Auth({registerURL}) {
             <div className="text-center">
               {
                 registerURL?
-                <button disabled={invalidEmail || invalidUsername || invalidPassword} className="bg-green-700 p-2 w-full rounded">Register</button>
+                <button onClick={handleRegister} disabled={invalidEmail || invalidUsername || invalidPassword} className="bg-green-700 p-2 w-full rounded">Register</button>
                 :
-                <button disabled={invalidEmail || invalidUsername || invalidPassword} className="bg-green-700 p-2 w-full rounded">LogIn</button>
+                <button onClick={handleLogin} disabled={invalidEmail || invalidUsername || invalidPassword} className="bg-green-700 p-2 w-full rounded">LogIn</button>
               }
             {/* Google Authentication */}
+           
+              {
+                !registerURL &&
+                <div className="my-5 text-center">
+                 <p>---------------Or---------------</p>
+                 <div className="mt-2 flex justify-center items-center w-full">
+                  <GoogleLogin
+                    onSuccess={credentialResponse => {
+                      handleGoogleLogin(credentialResponse);
+                    }}
+                    onError={() => {
+                      console.log('Login Failed');
+                    }}
+                  />
+                 </div>
+                </div>
+              } 
 
             <div className="my-5 text-center">
               {

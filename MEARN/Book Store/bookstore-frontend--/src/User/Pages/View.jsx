@@ -1,12 +1,54 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../../components/Footer'
 import { FaBackward, FaCamera, FaEye } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { bookPaymentAPI, viewBookAPI } from '../../services/allAPI'
+import serverURL from '../../services/serverURL'
+import { loadStripe } from '@stripe/stripe-js'
 
 function View() {
 
   const [modalStatus,setModalStatus] = useState(false)
+  const [book,setBook] = useState({})
+  const {id} = useParams()
+
+  console.log(book);
+  
+  useEffect(()=>{
+    getBookDetails()
+  },[])
+
+  const getBookDetails = async ()=>{
+    const token = sessionStorage.getItem('token')
+      if(token){
+        const reqHeader = {
+        "Authorization":`Bearer ${token}`
+        }
+        const result = await viewBookAPI(id,reqHeader)
+        if(result.status==200){
+          setBook(result.data)
+        }else{
+          console.log(result);
+        }
+      }
+    
+  }
+
+  const makePayment = async () =>{
+    const stripe = await loadStripe('pk_test_51Slkvp2LpCazpfHGGCS7roX8MohdwPI3DRJD1TFne8Tv7RM3mUxkTTNI7xwVRuGU0yT0cuOuQ9IUFyYXxlZHS3L4003bVSMYPt');
+        // console.log(stripe); 
+    // api call
+    const token = sessionStorage.getItem('token')
+      if(token){
+        const reqHeader = {
+        "Authorization":`Bearer ${token}`
+        }
+    const result = await bookPaymentAPI(id,reqHeader)
+    const {checkOutURL} = result.data
+    window.location.href = checkOutURL
+    }
+  }
   
   return (
     <>
@@ -15,29 +57,29 @@ function View() {
       <div className="border shadow p-5 border-gray-200">
         <div className="md:grid grid-cols-4 gap-x-10">
           <div className="col-span-1">
-            <img width={'100%'} src="https://m.media-amazon.com/images/I/71+2-t7M35L._AC_UF1000,1000_QL80_.jpg" alt="" /> 
+            <img width={'100%'} src={book?.imageURL} alt="" /> 
           </div>
           <div className="col-span-3">
             <div className="flex justify-between mt-5 md:mt-0">
-              <h1 className="text-xl font-bold">Title</h1>
+              <h1 className="text-xl font-bold">{book?.title}</h1>
               <button onClick={()=>setModalStatus(!modalStatus)} className="text-gray-400"><FaEye/></button>
             </div>
-            <h3 className="text-xl text-blue-600 my-5">Author</h3>
+            <h3 className="text-xl text-blue-600 my-5">{book?.author}</h3>
             <div className="md:grid grid-cols-3 gap-5 my-10">
-              <p className="font-bold">Publisher :</p>
-              <p className="font-bold">Language :</p>
-              <p className="font-bold">No of Pages :</p>
-              <p className="font-bold">Category :</p>
-              <p className="font-bold">ISBN :</p>
-              <p className="font-bold">Original Price :</p>
-              <p className="font-bold">Seller :</p>
+              <p className="font-bold">Publisher : {book?.publisher}</p>
+              <p className="font-bold">Language : {book?.language}</p>
+              <p className="font-bold">No of Pages : {book?.pages}</p>
+              <p className="font-bold">Category : {book?.category}</p>
+              <p className="font-bold">ISBN : {book?.isbn}</p>
+              <p className="font-bold">Original Price : {book?.price}</p>
+              <p className="font-bold">Seller : {book?.sellerMail}</p>
             </div>
             <div className="md:my-10 my-4">
-              <p className="font-bold text-lg">Abstract</p>
+              <p className="font-bold text-lg">{book?.abstract}</p>
             </div>
             <div className="flex justify-end">
               <Link to={'/books'} className='bg-blue-900 text-white p-2 rounded flex items-center'><FaBackward className='me-2'/>Back</Link>
-              <button className='bg-green-900 text-white p-2 rounded ms-5'>Buy $ price</button>
+              <button onClick={makePayment} className='bg-green-900 text-white p-2 rounded ms-5'>Buy $ {book?.discountPrice}</button>
             </div>
           </div>
         </div>
@@ -57,7 +99,14 @@ function View() {
               <p className="text-blue-600"><FaCamera className='me-2'/>Camera click of the book in the hand of seller</p>
               {/* books in rows and columns */}
               <div className="md:flex flex-wrap my-4">
-            <img className='md:w-75 w-25 md:me-2 mb-3 md:mt-0' src="https://m.media-amazon.com/images/I/71+2-t7M35L._AC_UF1000,1000_QL80_.jpg" alt="" />
+            {
+              book?.uploadImg?.length>0 ?
+              book?.uploadImg?.map((filename,index)=>(
+                <img key={index} className='md:w-75 w-25 md:me-2 mb-3 md:mt-0' src={`${serverURL}/uploads/${filename}`} alt="" />
+              ))
+              :
+              <p className="font-bold text-lg">No Book Images are Available</p>
+            }
               </div>
             </div>
           </div>
