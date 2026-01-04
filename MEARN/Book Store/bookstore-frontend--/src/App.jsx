@@ -13,14 +13,18 @@ import AdminProfile from './admin/pages/AdminProfile'
 import Auth from './pages/Auth'
 import Pnf from './pages/Pnf'
 
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import PreLoader from './components/PreLoader'
+import PaymentSuccess from './User/Pages/PaymentSuccess'
+import PaymentFailure from './User/Pages/PaymentFailure'
+import { routeGuardContext } from './contextAPI/AuthContext'
 
 
 
 
 function App() {
 
+const {role,authorisedUser,setAuthorisedUser} = useContext(routeGuardContext)
 const[loader,setLoader] = useState(true)
 
 setTimeout(()=>{
@@ -32,17 +36,28 @@ setTimeout(()=>{
     <>
      <Routes>
       <Route path='/' element={ loader?<PreLoader/>:<Home/>} />
-      <Route path='/login' element={ <Auth/>"
-      "th registerURL={true} /> } />
+      <Route path='/login' element={ <Auth/> }/>
+      <Route path='/register' element={ <Auth registerURL={true} /> }/>
       <Route path='/books' element={ <Books /> }/>
       <Route path='/contact' element={ <Contact /> }/>
 
-      <Route path='/user/profile' element={ <Profile /> }/>
-      <Route path='/books/:id/view' element={ <View /> } />
+      { role=="user"&&
+        <>
+          <Route path='/user/profile' element={ <Profile /> }/>
+          <Route path='/books/:id/view' element={ <View /> } />
+          <Route path='/payment-success' element={ <PaymentSuccess /> } />
+          <Route path='/payment-failure' element={ <PaymentFailure /> } />
+        </>
+      }
 
-      <Route path='/admin/home' element={ <AdminHome /> } /> 
-      <Route path='/admin/collection' element={ <AdminCollection /> } /> 
-      <Route path='/admin/profile' element={ <AdminProfile /> } /> 
+
+      { role=="admin"&&
+        <>
+          <Route path='/admin/home' element={loader?<PreLoader/>: <AdminHome /> } /> 
+          <Route path='/admin/collection' element={ <AdminCollection /> } /> 
+          <Route path='/admin/profile' element={ <AdminProfile /> } /> 
+        </>
+      }
 
       <Route path='/*' element={ <Pnf /> } /> 
 

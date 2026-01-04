@@ -1,10 +1,48 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../../components/Footer'
 import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+import { getHomepageBooksAPI } from '../../services/allAPI'
+import { searchContext } from '../../contextAPI/ShareContext'
 
 function Home() {
+
+  const navigate = useNavigate()
+  // const [searchKey,setSearchKey] = useState("")
+  const {searchKey,setSearchKey} = useContext(searchContext)
+  const [homeBooks,setHomeBooks] = useState([])
+
+  console.log(homeBooks);
+  useEffect(()=>{
+    getHomeBooks()
+  },[])
+
+  const getHomeBooks = async ()=>{
+    const result = await getHomepageBooksAPI()
+    if(result.status==200){
+      setHomeBooks(result.data)
+    }else{
+      console.log(result);
+    }
+  }
+
+  const handleSearch = ()=>{
+    if(!searchKey){
+      toast.warning("Please Enter Book Title Here !!!")
+    }else if (!sessionStorage.getItem("token")){
+      toast.warning("Please Login !!!")
+      setTimeout(() => {
+        navigate('/login')
+      },2000);
+    }else if(sessionStorage.getItem("token") && searchKey){
+      navigate('/books')
+    }else{
+      toast.error("Somthing Went Wrong")
+    }
+  }
+  
   return (
     <>
       <Header />
@@ -14,8 +52,8 @@ function Home() {
           <h1 className='text-5xl font-bold'>Wonderful Gifts</h1>
           <p>Gift your family and friends a book</p>
           <div className="mt-9 flex items-center">
-            <input type="text" className='bg-white p-2 rounded-3xl w-100 text-black placeholder-gray-500' placeholder='Search A Book' name="" id="" />
-            <FaSearch className='text-gray-500' style={{ marginLeft: '-40px' }} />
+            <input onChange={e=>setSearchKey(e.target.value)} type="text" className='bg-white p-2 rounded-3xl w-100 text-black placeholder-gray-500' placeholder='Search A Book' name="" id="" />
+            <FaSearch onClick={handleSearch} className='text-gray-500 cursor-pointer' style={{ marginLeft: '-40px' }} />
           </div>
         </div>
       </div>
@@ -25,14 +63,22 @@ function Home() {
         <h1 className='text-4xl my-2'>Explore our Latest Collection</h1>
         <div className='md:grid grid-cols-4 w-full my-10'>
           {/* duplicate book card */}
-          <div className='shadow rounded p-3 m-4 md:my-0'>
-            <img width={'100%'} height={'300px'} src="https://m.media-amazon.com/images/I/71+2-t7M35L._AC_UF1000,1000_QL80_.jpg" alt="" />
+          {
+            homeBooks?.length>0?
+            homeBooks.map(book=>(
+              <div key={book?._id} className='shadow rounded p-3 m-4 md:my-0'>
+            <img width={'100%'} height={'300px'} src={book?.imageURL} alt="" />
             <div className="flex flex-col justify-center items-center mt-4">
-              <h3 className="font-bold text-blue-700 text-xl">Author</h3>
-              <p>title</p>
-              <p>$ Price</p>
+              <h3 className="font-bold text-blue-700 text-xl">{book?.author}</h3>
+              <p>{book?.title}</p>
+              <p>$ {book?.discountPrice}</p>
             </div>
           </div>
+            ))
+          :
+          <div className="font-bold">Loading....</div>
+          }
+
         </div>
         <div className="text-center my-10">
           <Link to={'/books'} className='bg-blue-900 p-3 text-white font-black'>Explore More</Link>
@@ -119,6 +165,8 @@ function Home() {
         </div>
       </section>
       <Footer />
+        <ToastContainer position='top-center' autoClose={3000} theme='colored' />
+      
     </>
   )
 }

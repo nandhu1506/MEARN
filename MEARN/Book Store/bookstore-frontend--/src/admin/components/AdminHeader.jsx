@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaPowerOff } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import { routeGuardContext } from '../../contextAPI/AuthContext'
 
 function AdminHeader() {
+  
+  const {role,authorisedUser,setAuthorisedUser} = useContext(routeGuardContext)
+  const navigate = useNavigate()
+  const logout = ()=>{
+    sessionStorage.clear()
+    setAuthorisedUser(false)
+    navigate('/')
+  }
+
   return (
    <>
    <div className="flex justify-between items-center p-3 md:px-20">
@@ -12,7 +23,7 @@ function AdminHeader() {
       <h1 className="text-2xl font-bold ms-2 ">Book Store</h1>
       </div>
       {/* Logout */}
-      <button className='bg-black px-3 py-2 rounded text-white hover-border hover:text-black hover:bg-white flex items-center'>LogOut<FaPowerOff className='me-2'/></button>
+      <button onClick={logout} className='bg-black px-3 py-2 rounded text-white hover-border hover:text-black hover:bg-white flex items-center'>LogOut<FaPowerOff className='me-2'/></button>
       {/* marque */}
       
    </div>

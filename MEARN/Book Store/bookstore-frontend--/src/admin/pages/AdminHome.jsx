@@ -2,8 +2,9 @@ import React from 'react'
 import AdminHeader from '../components/AdminHeader'
 import AdminSidebar from '../components/AdminSidebar'
 import Footer from '../../components/Footer'
-import { FaBook } from 'react-icons/fa'
+import { FaBook, FaUsers } from 'react-icons/fa'
 import { ResponsiveContainer,BarChart, Legend, XAxis, YAxis, CartesianGrid, Tooltip, Bar,PieChart, Pie  } from 'recharts'
+import { FaPeopleGroup } from 'react-icons/fa6'
 
 function AdminHome() {
   const data = [
@@ -83,7 +84,7 @@ const data02 = [
             <div className="md:px-5 my-5 md:my-0">
               {/* card 2 */}
               <div className="bg-red-100 p-4 items-center flex text-5xl rounded ">
-                <FaBook />
+                <FaUsers/>
                 <div className="text-center ms-10 md:ms-5">
                   <h3 className="text-lg">Total Number of Users</h3>
                   <h3 className="text-3xl">100+</h3>
@@ -92,7 +93,7 @@ const data02 = [
             </div><div className="md:px-5 my-5 md:my-0">
               {/* card 3 */}
               <div className="bg-yellow-100 p-4 items-center flex text-5xl rounded ">
-                <FaBook />
+                <FaPeopleGroup  />
                 <div className="text-center ms-10 md:ms-5">
                   <h3 className="text-lg">Total Number of Employees</h3>
                   <h3 className="text-3xl">100+</h3>
